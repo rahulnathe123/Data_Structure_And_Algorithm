@@ -1,0 +1,74 @@
+List created successfully------------------------------------------------------------------
+----Testing assertions on the empty list----
+All insertion on the empty list is successful------------------------------------------------------------------
+ showing empty list immediately after the creation :
+
+[START]->END
+------------------------------------------------------------------
+100 inserted succesfully at the start of list
+200 inserted succesfully at the start of list
+300 inserted succesfully at the start of list
+400 inserted succesfully at the start of list
+500 inserted succesfully at the start of list
+Showing list after inserting the 5 data elements at the start of the list
+[START]->[500] -> [400] -> [300] -> [200] -> [100] -> END
+------------------------------------------------------------------
+2000 inserted successfully at the end of list
+3000 inserted successfully at the end of list
+4000 inserted successfully at the end of list
+5000 inserted successfully at the end of list
+6000 inserted successfully at the end of list
+Showing list after inserting 5 elements at the end of list:
+
+[START]->[500] -> [400] -> [300] -> [200] -> [100] -> [2000] -> [3000] -> [4000] -> [5000] -> [6000] -> END
+------------------------------------------------------------------
+Expected results after insert data 100 after non- existent data -5
+------------------------------------------------------------------
+Showing list after inserting 42 successfully after 100
+
+[START]->[500] -> [400] -> [300] -> [200] -> [100] -> [42] -> [2000] -> [3000] -> [4000] -> [5000] -> [6000] -> END
+------------------------------------------------------------------
+Expected results after insert data 1000 before non-existent data 43
+------------------------------------------------------------------
+Showing list After inserting 250 Before data 300
+
+[START]->[500] -> [400] -> [250] -> [300] -> [200] -> [100] -> [42] -> [2000] -> [3000] -> [4000] -> [5000] -> [6000] -> END
+------------------------------------------------------------------
+Data at the start = 500
+Showing list to demonstrate the get_start returns start data without removing it
+[START]->[500] -> [400] -> [250] -> [300] -> [200] -> [100] -> [42] -> [2000] -> [3000] -> [4000] -> [5000] -> [6000] -> END
+------------------------------------------------------------------
+Data at the end = 6000
+Showing list to demonstrate the get_end() return end data without removing it
+[START]->[500] -> [400] -> [250] -> [300] -> [200] -> [100] -> [42] -> [2000] -> [3000] -> [4000] -> [5000] -> [6000] -> END
+------------------------------------------------------------------
+Data at the start = 500
+Showing list to demonstrate to pop_start() return start data with removing it
+[START]->[400] -> [250] -> [300] -> [200] -> [100] -> [42] -> [2000] -> [3000] -> [4000] -> [5000] -> [6000] -> END
+------------------------------------------------------------------
+Data at the end = 6000
+Showing list to demostrate to pop_end() return end data with removing it
+[START]->[400] -> [250] -> [300] -> [200] -> [100] -> [42] -> [2000] -> [3000] -> [4000] -> [5000] -> END
+------------------------------------------------------------------
+Showing list after remove_start()
+[START]->[250] -> [300] -> [200] -> [100] -> [42] -> [2000] -> [3000] -> [4000] -> [5000] -> END
+------------------------------------------------------------------
+Showing list after remove_end()
+[START]->[250] -> [300] -> [200] -> [100] -> [42] -> [2000] -> [3000] -> [4000] -> END
+------------------------------------------------------------------
+Expexted error in removing non-exisitent data 78
+------------------------------------------------------------------
+Showing list after successfully removing data 100
+
+[START]->[250] -> [300] -> [200] -> [42] -> [2000] -> [3000] -> [4000] -> END
+------------------------------------------------------------------
+Expected return value FALSE from find() for non-existent data 78
+------------------------------------------------------------------
+Expected return value TRUE from find() for existent data 3000
+------------------------------------------------------------------
+Expected return value FALSE from is_list_empty()
+------------------------------------------------------------------
+Length of the list = 7
+------------------------------------------------------------------
+List is destroyed successfully
+------------------------------------------------------------------
