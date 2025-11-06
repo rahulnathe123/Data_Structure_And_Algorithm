@@ -1,0 +1,89 @@
+11. Create a form to capture Book details through PHP. The HTML form should perform the
+following.:
+a. Capture the date such as Book name, Author name, Publisher name, Category and
+  Synopsis
+b. Clears the form details when the Reset button is clicked.
+  Submit the captured data when the Submit button is clicked.
+
+
+bookform.html
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Book Details Form</title>
+    </head>
+    <body>
+        <h2>Enter Book Details</h2>
+        <form action="bookdisplay.php" method="post">
+            Book Name: <input type="text" name="bookName" required>
+            <br>
+            <br>
+            Author Name: <input type="text" name="authorName" required>
+            <br>
+            <br>
+            Publisher Name: <input type="text" name="publisherName" required>
+            <br>
+            <br>
+            Category: <input type="text" name="category" required>
+            <br>
+            <br>
+
+            <textarea name="synopsis" rows="5" cols="40" required></textarea>
+            <br>
+            <br>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </form>
+    </body>
+</html>
+
+
+
+----------------------------------------------------------------------------------------------
+
+bookdisplay.php
+
+<?php
+// Capture form data
+    $bookName = $_POST['bookName'];
+    $authorName = $_POST['authorName'];
+    $publisherName = $_POST['publisherName'];
+    $category = $_POST['category'];
+    $synopsis = $_POST['synopsis'];
+?>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Book Details Submitted</title>
+    </head>
+    <body>
+        <h2>Book Details Submitted</h2>
+        <p>
+            <b>Book Name:</b> 
+            <?php echo htmlspecialchars($bookName); ?>
+        </p>
+        <p>
+            <b>Author Name:</b> 
+            <?php echo htmlspecialchars($authorName); ?>
+        </p>
+        <p>
+            <b>Publisher Name:</b> 
+            <?php echo htmlspecialchars($publisherName); ?>
+        </p>
+        <p>
+            <b>Category:</b> 
+            <?php echo htmlspecialchars($category); ?>
+        </p>
+        <p>
+            <b>Synopsis:</b> 
+            <?php echo nl2br(htmlspecialchars($synopsis)); ?>
+        </p>
+    </body>
+</html
+
+
+
+
