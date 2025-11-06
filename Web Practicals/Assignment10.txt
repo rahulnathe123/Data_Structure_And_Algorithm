@@ -1,0 +1,99 @@
+10. 
+Write a program in PHP that formats a block of text (to be input by the user) based on
+preferences chosen by the user. Give your user options for color of text, font choice, and
+size. Display the output on a new page. Allow user the option of saving the information for
+the next time they visit. If they choose "yes" save the information in a cookie.
+
+
+form.html
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Text Formatter</title>
+</head>
+<body>
+
+  <h2>Enter Text and Preferences</h2>
+
+  <form action="display.php" method="post">
+    <textarea name="userText" rows="5" cols="40" placeholder="Enter your text here"></textarea><br><br>
+
+    Select Color:
+    <input type="color" name="textColor"><br><br>
+
+    Select Font:
+    <select name="fontChoice">
+      <option value="Arial">Arial</option>
+      <option value="Verdana">Verdana</option>
+      <option value="Times New Roman">Times New Roman</option>
+    </select><br><br>
+
+    Font Size:
+    <input type="number" name="fontSize" min="10" max="50" value="16"> px<br><br>
+
+    Save preferences for next time?
+    <input type="radio" name="saveCookie" value="yes"> Yes
+    <input type="radio" name="saveCookie" value="no" checked> No<br><br>
+
+    <input type="submit" value="Submit">
+  </form>
+
+</body>
+</html>
+
+
+-----------------------------------------------------------------
+
+display.php
+
+
+<?php
+// Get user input from form
+$text  = $_POST['userText'];
+$color = $_POST['textColor'];
+$font  = $_POST['fontChoice'];
+$size  = $_POST['fontSize'];
+$save  = $_POST['saveCookie'];
+
+// If user chooses "Yes", save preferences in cookies for 30 days
+if ($save == "yes") {
+    setcookie("textColor", $color, time() + (86400 * 30), "/");
+    setcookie("fontChoice", $font, time() + (86400 * 30), "/");
+    setcookie("fontSize", $size, time() + (86400 * 30), "/");
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Formatted Text Output</title>
+</head>
+<body>
+
+  <h2>Your Formatted Text</h2>
+
+  <p style="color: <?= htmlspecialchars($color) ?>;
+            font-family: <?= htmlspecialchars($font) ?>;
+            font-size: <?= htmlspecialchars($size) ?>px;">
+    <?= htmlspecialchars($text) ?>
+  </p>
+
+  <?php
+  // If cookies exist, display saved preferences
+  if (isset($_COOKIE["textColor"])) {
+      echo "<h3>Saved Preferences (from Cookie):</h3>";
+      echo "Color: " . $_COOKIE["textColor"] . "<br>";
+      echo "Font: " . $_COOKIE["fontChoice"] . "<br>";
+      echo "Size: " . $_COOKIE["fontSize"] . " px<br>";
+  }
+  ?>
+
+  <br><br>
+  <a href="form.html">Back to Form</a>
+
+</body>
+</html>
+
+
+
