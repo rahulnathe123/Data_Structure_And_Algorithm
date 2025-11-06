@@ -1,0 +1,28 @@
+9. Write a program to How to get the value of a textbox using jQuery. 
+
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Get Textbox Value</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+        <h3>Enter Your Name:</h3>
+        <input type="text" id="myText" placeholder="Type here...">
+        <button id="btnGet">Get Value</button>
+
+        <p id="result"></p>
+
+        <script>
+            $(document).ready(function(){
+                $("#btnGet").click(function(){
+                    var value = $("#myText").val();   // get value of textbox
+                    $("#result").text("You entered: " + value);
+                });
+            });
+        </script>
+    </body>
+</html>
