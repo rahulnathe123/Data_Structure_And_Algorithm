@@ -1,0 +1,79 @@
+7. Build a navigation menu that highlights the selected entry. uses only Angular's directives.
+
+
+<!DOCTYPE html>
+<html ng-app="menuApp">
+    <head>
+        <title>Navigation Menu</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+        <style>
+            ul 
+            {
+                list-style-type: none;
+                padding: 0;
+            }
+            li
+            {
+                display: inline-block;
+                padding: 10px 20px;
+                cursor: pointer;
+            }
+            .active 
+            {
+                background-color: #4CAF50;
+                color: white;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body ng-controller="menuCtrl" ng-keydown="handleKey($event)" tabindex="0">
+        <ul>
+            <li ng-repeat="item in menuItems"
+                ng-class="{active: isActive(item)}"
+                ng-click="setActive(item)">
+                {{item}}
+            </li>
+        </ul>
+
+        <h3>You selected: {{selectedItem}}</h3>
+
+        <script>
+            angular.module("menuApp", [])
+            .controller("menuCtrl", function($scope) {
+            $scope.menuItems = ["Home", "About", "Services", "Contact"];
+            $scope.selectedItem = "Home";
+            $scope.setActive = function(item) {
+            $scope.selectedItem = item;
+        };
+
+        $scope.isActive =function(item) 
+                        {
+                            return $scope.selectedItem === item;
+                        };
+
+        // Handle keyboard navigation
+        $scope.handleKey = function(event) {
+            let index = $scope.menuItems.indexOf($scope.selectedItem);
+
+            if (event.key === "Home") {
+                $scope.selectedItem = $scope.menuItems[0];
+            } 
+            else if (event.key === "End") {
+                $scope.selectedItem = $scope.menuItems[$scope.menuItems.length - 1];
+            } 
+            else if (event.key === "ArrowRight") {
+                index = (index + 1) % $scope.menuItems.length;
+                $scope.selectedItem = $scope.menuItems[index];
+            }
+               else if (event.key === "ArrowLeft") {
+                index = (index - 1 + $scope.menuItems.length) % $scope.menuItems.length;
+                $scope.selectedItem = $scope.menuItems[index];
+                }
+
+                $scope.$apply(); // update scope
+                };
+            });
+        </script>
+
+</body>
+</html>
