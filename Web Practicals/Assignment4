@@ -1,0 +1,37 @@
+4. Write a bootstrap example to create a grid with 50% split on small, medium and large
+devices.
+
+
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head> 
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Simple 50% Grid</title> 
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"> 
+    </head> 
+    <body> 
+        <div class="container mt-5"> 
+            <div class="row"> 
+                <div class="col-12 col-sm-6 col-md-6 col-lg-6 bg-primary text-white p-3"> 
+                    <h3>Web Development</h3> 
+                    <ul> 
+                        <li>HTML & CSS basics</li> 
+                        <li>JavaScript fundamentals</li> 
+                        <li>Bootstrap layouts</li> 
+                        <li>Build small websites</li> 
+                    </ul> 
+                </div> 
+                <div class="col-12 col-sm-6 col-md-6 col-lg-6 bg-secondary text-white p-3"> 
+                    <h3>Data Science</h3> 
+                    <ul> 
+                        <li>Python basics</li> 
+                        <li>Data analysis with Pandas</li> 
+                        <li>Data visualization</li> 
+                        <li>Basic machine learning</li> 
+                    </ul> 
+                </div> 
+            </div> 
+        </div> 
+    </body> 
+</html> 
