@@ -1,0 +1,70 @@
+index.html
+
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>My Website</title> 
+</head> 
+<frameset rows="20%,80%"> 
+    <frame name="header" src="header.html"> 
+    <frameset cols="30%,70%"> 
+        <frame name="leftFrame" src="menu.html"> 
+        <frame name="rightFrame" src="profile.html"> 
+    </frameset> 
+</frameset> 
+</html> 
+
+
+
+header.html
+
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <title>Header</title> 
+</head> 
+<body> 
+  <table width="100%"> 
+    <tr> 
+      <td><h1>MY WEBSITE</h1></td> 
+      <td align="center"><h2>MY PROFILE</h2></td> 
+       <td width="33%"></td> 
+    </tr> 
+  </table> 
+</body> 
+</html> 
+
+
+menu.html
+
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>Menu</title> 
+ 
+</head> 
+<body> 
+    <a href="profile.html" target="rightFrame"><b>Home</b></a><br><br> 
+    <a href="profile.html" target="rightFrame"><b>My Profile</b></a> 
+</body> 
+</html> 
+
+
+profile.html
+
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>Profile</title> 
+</head> 
+<body> 
+    <form> 
+        <label>Name:-</label> 
+        <input type="text"><br><br> 
+        <label>Contact No:-</label> 
+        <input type="text"> 
+    </form> 
+</body> 
+</html> 
+
+
