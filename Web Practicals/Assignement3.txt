@@ -1,0 +1,172 @@
+3. Write Java Script code which will display Patient Master form having following fields
+Patient ID, Patient Name, Address, City, Contact Number, Date of Birth. Validate above
+fields with different criteria.
+
+
+
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>Patient Master Form</title> 
+    <style>     
+        body 
+        {
+            font-family: Arial, sans-serif;
+            background: #c31313;
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        
+        form
+        {       
+            background: hsl(30, 60%, 55%);
+            padding: 20px;        
+            border: 1px solid #ccc;       
+            border-radius: 5px;       
+            width: 350px; 
+            box-sizing: border-box;
+        }
+        
+        h2 
+        {       
+            text-align: center;
+            margin-bottom: 20px; 
+        }     
+        label
+        {       
+            display: block;
+            margin-bottom: 5px;       
+            font-weight: bold; 
+        } 
+        input[type="text"],
+        input[type="date"] 
+        {
+            width: 100%;
+            padding: 8px;       
+            margin-bottom: 15px;       
+            border: 1px solid #ccc;       
+            border-radius: 4px;       
+            box-sizing: border-box;  
+        } 
+        input[type="submit"] 
+        {       
+            width: 100%;       
+            padding: 10px;       
+            background: #4CAF50; 
+            color: white;
+            border: none;       
+            border-radius: 4px;       
+            cursor: pointer; 
+        } 
+        input[type="submit"]:hover 
+        {       
+            background: #45a049; 
+        } 
+    </style>
+
+    <script>
+        function validateForm() 
+        {       
+            var pid = document.getElementById("pid").value;
+            var name = document.getElementById("name").value;
+            var address = document.getElementById("address").value;
+            var city = document.getElementById("city").value;
+            var contact = document.getElementById("contact").value;
+            var dob = document.getElementById("dob").value;
+            if (pid === "") 
+            {           
+                alert("Please enter Patient ID.");
+                return false;  
+            } 
+ 
+            if (name === "")
+            {         
+                alert("Please enter Patient Name.");         
+                return false; 
+            } 
+            if (!/^[A-Za-z\s]+$/.test(name)) 
+            {         
+                alert("Name should contain alphabets only.");     
+                return false; 
+            } 
+ 
+            if (address === "") 
+            {
+                alert("Please enter Address.");         
+                return false; 
+            } 
+ 
+            if (city === "")
+            {         
+                alert("Please enter City.");         
+                return false; 
+            } 
+            if (!/^[A-Za-z\s]+$/.test(city))
+            {         
+                alert("City should contain alphabets only.");         
+                return false; 
+            } 
+ 
+            // Contact validation with separate checks       
+            // if (contact === "") 
+            // {         
+                    //alert("Please enter Contact Number.");         
+                    // return false;
+                //} 
+         
+            if (isNaN(contact))
+            {         
+                alert("Contact Number must contain digits only.");         
+                return false; 
+            } 
+ 
+            if(contact.length !== 10)
+            {         
+                alert("Contact Number must be exactly 10 digits.");         
+                return false; 
+            } 
+            if(contact.charAt(0) === "0") 
+            {         
+                alert("Contact Number should not start with 0.");         return false; 
+            } 
+ 
+            if (dob === "")
+            {         
+                alert("Please enter Date of Birth.");
+                return false; 
+            } 
+            alert("Form submitted successfully!");       
+            return true;     
+        }
+
+    </script> 
+</head>
+
+<body>
+    <form onsubmit="return validateForm();"> 
+        <h2>Patient Master Form</h2> 
+        <label for="pid">Patient ID:</label> 
+        <input type="text" id="pid"> 
+ 
+        <label for="name">Patient Name:</label> 
+        <input type="text" id="name"> 
+ 
+        <label for="address">Address:</label> 
+        <input type="text" id="address"> 
+ 
+        <label for="city">City:</label> 
+        <input type="text" id="city"> 
+        <label for="contact">Contact Number:</label> 
+        <input type="text" id="contact" maxlength="10"> 
+ 
+        <label for="dob">Date of Birth:</label> 
+        <input type="date" id="dob"> 
+ 
+        <input type="submit" value="Submit"> 
+    </form> 
+</body> 
+</html> 
+
+
+
