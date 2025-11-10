@@ -1,0 +1,110 @@
+-----Entered : main()-----
+List created Successfully
+
+------------------------------------------------------------------------
+Testing Assertion on the empty list
+-----Entered : test_for_assertion_on_empty_list()-----
+
+All insertion on list is successfully-----Leaving : test_for_assertion_on_empty_list()-----
+
+------------------------------------------------------------------------
+Testing on Data Insertion on the list
+-----Entered : test_for_data_addition_function()----
+100 inserted successfully at the start of the list
+200 inserted successfully at the start of the list
+300 inserted successfully at the start of the list
+400 inserted successfully at the start of the list
+500 inserted successfully at the start of the list
+Showing list after inserting 5 elements successfully
+LIST :- [START] -> 500 -> 400 -> 300 -> 200 -> 100 -> [END] ->
+
+
+---------------------------------------------------------
+1000 inserted Successfully at the end of the list
+2000 inserted Successfully at the end of the list
+3000 inserted Successfully at the end of the list
+4000 inserted Successfully at the end of the list
+5000 inserted Successfully at the end of the list
+Showing list after inserting 5 elements successfully at the end of the listLIST :- [START] -> 500 -> 400 -> 300 -> 200 -> 100 -> 1000 -> 2000 -> 3000 -> 4000 -> 5000 -> [END] ->
+
+
+---------------------------------------------------------
+Expected Results Come after inserting 10000 before non existent data 50
+
+---------------------------------------------------------
+Showing list after Successfully inserting 10000 before existent data 100
+LIST :- [START] -> 500 -> 400 -> 300 -> 200 -> 10000 -> 100 -> 1000 -> 2000 -> 3000 -> 4000 -> 5000 -> [END] ->
+
+
+---------------------------------------------------------
+Expected Results Come after inserting 20000 after non-existent data 50
+
+---------------------------------------------------------
+Showing list After successfully inserting 20000 after existent data 100
+LIST :- [START] -> 500 -> 400 -> 300 -> 200 -> 10000 -> 100 -> 20000 -> 1000 -> 2000 -> 3000 -> 4000 -> 5000 -> [END] ->
+
+---------------------------------------------------------
+-----Leaving : test_for_data_addition_function()----
+
+------------------------------------------------------------------------
+Testing on Accessing Data on the list
+-----Entered : test_for_GetData_on_list()-----
+Starting data : 500
+Showing list after demonstrate get_start() on the list
+LIST :- [START] -> 500 -> 400 -> 300 -> 200 -> 10000 -> 100 -> 20000 -> 1000 -> 2000 -> 3000 -> 4000 -> 5000 -> [END] ->
+
+
+---------------------------------------------------------
+Ending data : 5000
+Showing list after demonstrate get_end() on the list
+LIST :- [START] -> 500 -> 400 -> 300 -> 200 -> 10000 -> 100 -> 20000 -> 1000 -> 2000 -> 3000 -> 4000 -> 5000 -> [END] ->
+
+-----Leaving : test_for_GetData_on_list()-----
+
+---------------------------------------------------------
+
+------------------------------------------------------------------------
+Testing on Removing Data on the list
+-----Entered : test_for_data_remove_function()-----
+Start data : 500
+Showing list after demonstrate pop_start() with removing it
+LIST :- [START] -> 400 -> 300 -> 200 -> 10000 -> 100 -> 20000 -> 1000 -> 2000 -> 3000 -> 4000 -> 5000 -> [END] ->
+
+
+---------------------------------------------------------
+End Data : 5000
+Showing list after demonstrate pop_end() with removing it
+LIST :- [START] -> 400 -> 300 -> 200 -> 10000 -> 100 -> 20000 -> 1000 -> 2000 -> 3000 -> 4000 -> [END] ->
+
+
+---------------------------------------------------------
+Showing list after remove_start()
+LIST :- [START] -> 300 -> 200 -> 10000 -> 100 -> 20000 -> 1000 -> 2000 -> 3000 -> 4000 -> [END] ->
+
+---------------------------------------------------------
+Showing list after remove_start()
+LIST :- [START] -> 300 -> 200 -> 10000 -> 100 -> 20000 -> 1000 -> 2000 -> 3000 -> [END] ->
+
+---------------------------------------------------------
+Expected error comes out after remove non existent data 50
+
+---------------------------------------------------------
+Showing list After demonstrate remove 10000 from list
+LIST :- [START] -> 300 -> 200 -> 100 -> 20000 -> 1000 -> 2000 -> 3000 -> [END] ->
+
+---------------------------------------------------------
+-----Leaving : test_for_data_remove_function()-----
+
+------------------------------------------------------------------------
+Testing on Miscallenous Operation on the list
+-----Entered : test_for_miscallenous_function()-----
+Expected error comes FALSE after finding non existing data 50
+
+---------------------------------------------------------
+Expected results TRUE come after Finding data 20000
+
+---------------------------------------------------------
+Length of the list : 7
+Expected result FALSE come after checking is_list_empty()
+-----Leaving : test_For_miscallenous_function()-----
+-----Leaving : main()-----
